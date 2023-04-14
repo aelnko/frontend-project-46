@@ -10,29 +10,31 @@ const genDiff = (filepath1, filepath2) => {
   const tree = _.union(Object.keys(data1).concat(Object.keys(data2))).sort()
     .map((key) => {
       if (Object.hasOwn(data1, key) && !Object.hasOwn(data2, key)) {
-        return { key, value: data1[key], type: 'deleted'};
+        return { key, value: data1[key], type: 'deleted' };
       }
       if (!Object.hasOwn(data1, key) && Object.hasOwn(data2, key)) {
-        return { key, value: data2[key], type: 'added'};
+        return { key, value: data2[key], type: 'added' };
       }
       if (data1[key] !== data2[key]) {
-        return { key, oldValue: data1[key], newValue: data2[key], type: 'changed'};
+        return {
+          key, oldValue: data1[key], newValue: data2[key], type: 'changed',
+        };
       }
-      return { key, value: data1[key], type: 'not changed' }
+      return { key, value: data1[key], type: 'not changed' };
     });
   const result = tree.map((item) => {
     switch (item.type) {
       case 'deleted':
         return `  - ${item.key}: ${item.value}`;
-      case 'added': 
+      case 'added':
         return `  + ${item.key}: ${item.value}`;
       case 'changed':
         return [[`  - ${item.key}: ${item.oldValue}`], [`  + ${item.key}: ${item.newValue}`]].flat();
-      case 'not changed':
-        return `    ${item.key}: ${item.value}`
+      default:
+        return `    ${item.key}: ${item.value}`;
     }
   }).flat().join('\n');
-  return `{\n${result}\n}`
+  return `{\n${result}\n}`;
 };
 
 export default genDiff;
