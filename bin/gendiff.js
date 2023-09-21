@@ -7,8 +7,10 @@ import genDiff from '../src/index.js';
 program
   .version('1.0')
   .description('Compares two configuration files and shows a difference.')
-  .option('-f, --format', 'output format')
   .argument('<filepath1>')
   .argument('<filepath2>')
-  .action((filepath1, filepath2) => console.log(genDiff(filepath1, filepath2)));
+  .option('-f, --format <type>', 'output format', 'stylish')
+  .action((file1, file2) => {
+    console.log(genDiff(file1, file2, program.opts().format));
+  });
 program.parse();

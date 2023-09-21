@@ -62,8 +62,6 @@ const stylish = (ast, depth = 1) => {
     }
   };
 
-  console.log(ast);
-
   const tree = ast
     .flatMap((node) => iter(node))
     .join('\n');
