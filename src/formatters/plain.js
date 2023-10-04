@@ -28,9 +28,6 @@ const plain = (ast, parent = '') => {
       case 'nested': {
         return plain(node.children, path);
       }
-      default: {
-        return null;
-      }
     }
   };
   return ast.filter((node) => node.type !== 'none')
