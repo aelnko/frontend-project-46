@@ -4,6 +4,15 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/5066baef58c6f5d3fc70/maintainability)](https://codeclimate.com/github/aelnko/frontend-project-46/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/5066baef58c6f5d3fc70/test_coverage)](https://codeclimate.com/github/aelnko/frontend-project-46/test_coverage)
 
+## Installation
+To install, run the following command:
+````bash
+git clone git@github.com:aelnko/frontend-project-46.git
+cd frontend-project-46
+make
+npm link
+````
+
 ## How to run
 To display help, run the following command:
 ````bash
@@ -20,16 +29,6 @@ Options:
   -V, --version        output the version number
   -f, --format <type>  output format (default: "stylish")
   -h, --help           display help for command
-
-````
-
-## Installation
-To install, run the following command:
-````bash
-git clone git@github.com:aelnko/frontend-project-46.git
-cd frontend-project-46
-make
-npm link
 ````
 
 ## Comparing two JSON files
