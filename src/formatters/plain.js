@@ -25,7 +25,7 @@ const plain = (ast, parent = '') => {
       case 'changed': {
         return `Property '${path}' was updated. From ${formatValue(node.oldValue)} to ${formatValue(node.newValue)}`;
       }
-      case 'nested': {
+      default: {
         return plain(node.children, path);
       }
     }
