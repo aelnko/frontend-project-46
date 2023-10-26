@@ -4,6 +4,25 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/5066baef58c6f5d3fc70/maintainability)](https://codeclimate.com/github/aelnko/frontend-project-46/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/5066baef58c6f5d3fc70/test_coverage)](https://codeclimate.com/github/aelnko/frontend-project-46/test_coverage)
 
+## How to run
+To display help, run the following command:
+````bash
+gendiff -h
+````
+
+## Help
+````bash
+Usage: gendiff [options] <filepath1> <filepath2>
+
+Compares two configuration files and shows a difference.
+
+Options:
+  -V, --version        output the version number
+  -f, --format <type>  output format (default: "stylish")
+  -h, --help           display help for command
+
+````
+
 ## Installation
 To install, run the following command:
 ````bash
