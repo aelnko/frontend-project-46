@@ -12,7 +12,7 @@ const getFormat = (filepath) => {
 };
 
 export const getFileData = (filepath) => {
-  const format = getFormat(filepath);
+  const format = getFormat(filepath).slice(1);
   const formatFilepath = String(filepath);
   const data = parse(fs.readFileSync(path.resolve('__fixtures__', formatFilepath)), format);
   return data;
