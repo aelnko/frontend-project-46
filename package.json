@@ -2,7 +2,7 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "type": "module",
-  "description": "[![Actions Status](https://github.com/aelnko/frontend-project-46/workflows/hexlet-check/badge.svg)](https://github.com/aelnko/frontend-project-46/actions)",
+  "description": "Diff generator",
   "main": "./src/index.js",
   "scripts": {
     "test": "NODE_OPTIONS=--experimental-vm-modules npx jest --colors"

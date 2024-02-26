@@ -18,19 +18,19 @@ const buildTree = (object1, object2) => {
         };
       }
       if (!_.has(object2, key)) {
-        return { key, value: object1[key], type: 'removed' };
+        return { key, type: 'removed', value: object1[key] };
       }
       if (!_.has(object1, key)) {
-        return { key, value: object2[key], type: 'added' };
+        return { key, type: 'added', value: object2[key] };
       }
       if (_.has(object1, key) && _.has(object2, key) && object1[key] === object2[key]) {
         return {
-          key, value: object1[key], type: 'none',
+          key, type: 'unchanged', value: object1[key],
         };
       }
       if (_.has(object1, key) && _.has(object2, key)) {
         return {
-          key, oldValue: object1[key], newValue: object2[key], type: 'changed',
+          key, type: 'updated', oldValue: object1[key], newValue: object2[key],
         };
       }
     });

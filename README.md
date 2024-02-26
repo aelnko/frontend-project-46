@@ -1,3 +1,7 @@
+# Diff Generator
+
+Diff generator is a program that determines the difference between two data structures. A similar mechanism is used in tests' output or while tracking changes in configuration files.
+
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/aelnko/frontend-project-46/workflows/hexlet-check/badge.svg)](https://github.com/aelnko/frontend-project-46/actions)
 [![ESlint](https://github.com/aelnko/frontend-project-46/actions/workflows/eslint.yml/badge.svg)](https://github.com/aelnko/frontend-project-46/actions/workflows/eslint.yml)

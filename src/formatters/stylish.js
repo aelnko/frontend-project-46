@@ -42,11 +42,11 @@ const stylish = (ast, depth = 1) => {
         const indent = makeIndent(depth, '-');
         return `${indent}${node.key}: ${formatValue(node.value, depth)}`;
       }
-      case 'none': {
+      case 'unchanged': {
         const indent = makeIndent(depth);
         return `${indent}${node.key}: ${formatValue(node.value, depth)}`;
       }
-      case 'changed': {
+      case 'updated': {
         const removedIndent = makeIndent(depth, '-');
         const addedIndent = makeIndent(depth, '+');
         return [

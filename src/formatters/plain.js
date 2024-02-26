@@ -22,7 +22,7 @@ const plain = (ast, parent = '') => {
       case 'removed': {
         return `Property '${path}' was removed`;
       }
-      case 'changed': {
+      case 'updated': {
         return `Property '${path}' was updated. From ${formatValue(node.oldValue)} to ${formatValue(node.newValue)}`;
       }
       default: {
@@ -30,7 +30,7 @@ const plain = (ast, parent = '') => {
       }
     }
   };
-  return ast.filter((node) => node.type !== 'none')
+  return ast.filter((node) => node.type !== 'unchanged')
     .flatMap((node) => iter(node, parent))
     .join('\n');
 };
