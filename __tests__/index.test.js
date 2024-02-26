@@ -19,11 +19,17 @@ const expectedJson = fs.readFileSync(getFixturePath('expected.json'), 'utf-8');
 const file1 = getFixturePath('file1.json');
 const file2 = getFixturePath('file2.json');
 
-const file1yml = getFixturePath('file1.yaml');
+const file1yaml = getFixturePath('file1.yaml');
+const file2yaml = getFixturePath('file2.yaml');
+
+const file1yml = getFixturePath('file1.yml');
 const file2yml = getFixturePath('file2.yml');
 
 test('gendiff', () => {
   expect(gendiff(file1, file2)).toEqual(expectedStylish);
+  expect(gendiff(file1yml, file2yaml)).toEqual(expectedStylish);
+  expect(gendiff(file1yaml, file2yml)).toEqual(expectedStylish);
+  expect(gendiff(file1yaml, file2yaml)).toEqual(expectedStylish);
   expect(gendiff(file1yml, file2yml)).toEqual(expectedStylish);
   expect(gendiff(file1, file2, 'plain')).toEqual(expectedPlain);
   expect(gendiff(file1, file2, 'json')).toEqual(expectedJson);
